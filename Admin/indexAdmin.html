@@ -18,7 +18,7 @@
     integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
     crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="../styles/style.css">
   <title>CHECHO BARBERS</title>
 
   <script>
@@ -30,21 +30,21 @@
           if (usu == "admin") {
             if (pas == "12345") {
               localStorage.getItem("Admin");
-              alert("Bienvenido Administrador ");
-              window.open("./Admin/indexAdmin.html");
+              alert("Binvenido Administrador ");
+              window.open("indexAdmin.html");
             }
           } else if (usu == "empleado") {
     
               if (pas == "12345"){
                 localStorage.getItem("empleado");
-                alert("Bienvenido Empleado ");
-                window.open("./Empleado/indexE.html");
+                alert("Binvenido Empleado ");
+                window.open("indexEmpleado.html");
               }
           }else if (usu == "usuario"){
             if (pas == "12345") {
                   localStorage.getItem("usuario");
-                  alert("Bienvenido usuario ");
-                  window.open("./Usuario/indexU.html");
+                  alert("Binvenido usuario ");
+                  window.open("index.html");
                 }
     
           }else {
@@ -53,6 +53,33 @@
     
     
         }
+
+        function index(){
+
+          let c = document.getElementById("cantidadPersonas").value;
+          let h = document.getElementById("horario").value;
+
+          if(c && h != null  ){
+
+            alert("Gracias por Preferir nuestro servicio");
+
+            window.open("indexU.html");
+
+          }else{
+
+            alert("Ningun campo puede estar vacio");
+          }
+          
+        }
+
+        function indexU(){
+          alert("Sesión Cerrada")
+          window.open("../index.html");
+
+        }
+       
+
+        
       </script>
 </head>
 
@@ -64,7 +91,7 @@
       <div class="line">
         <ul>
           <li>
-            <button type="button" class="btn btn-secondary color1"><a href="index.html">Inicio</a></button>
+            <button type="button" class="btn btn-secondary color1"><a href="indexAdmin.html">Inicio</a></button>
 
           </li>
           <li>
@@ -75,7 +102,7 @@
               </a>
 
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item color" href="./Aterrizaje/horarioA.html"> Horarios </a>
+                <a class="dropdown-item color" href="horarioAd.html"> Horarios </a>
               </div>
             </div>
           </li>
@@ -87,9 +114,33 @@
               </a>
 
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item color" href="./Aterrizaje/portafolioA.html">Barbas</a>
-                <a class="dropdown-item color" href="./Aterrizaje/portafolioA.html">Cortes de cabello</a>
-                <a class="dropdown-item color" href="./Aterrizaje/portafolioA.html">Tintura</a>
+                <a class="dropdown-item color" href="portafolioAd.html">Barbas</a>
+                <a class="dropdown-item color" href="portafolioAd.html">Cortes de cabello</a>
+                <a class="dropdown-item color" href="portafolioAd.html">Tintura</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle " href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Clientes
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item color " href="listarClientesAd.html"> Listar clientes</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle " href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Empleados
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item color " href="listarEmpleados.html"> Listar empleados</a>
               </div>
             </div>
           </li>
@@ -100,13 +151,9 @@
       </div>
       <div class="line">
         <ul>
+          
           <li>
-            <button type="button" class="btn btn-secondary color1" data-toggle="modal"
-              data-target="#registroo">Registro</button>
-          </li>
-          <li>
-             <button type="button" class="btn btn-secondary color1" data-toggle="modal" data-target="#loginn">Iniciar
-              sesión</button>
+            <button type="button" class="btn btn-secondary color1" data-target="#loginn" onclick="indexU()">Cerrar sesión</button>
 
           </li>
         </ul>
@@ -130,37 +177,37 @@
           sales contento con un corte bien exótico.
         </p>
 
-        <img src="img/porta.jpg" alt="Corte" id="im">
+        <img src="../img/porta.jpg" alt="Corte" id="im">
       </div>
 
     </div>
 
     <div class="p">
-      <h2><a href="portafolio.html">PORTAFOLIO</a></h2>
+      <h2><a href="portafolioAd.html">PORTAFOLIO</a></h2>
     </div>
     <div class="flex-container2">
 
       <div>
-        <h4><a href="portafolio.html">CORTES</a> </h4><img src="img/CORTE.jpg" alt="corte" class="tama1">
+        <h4><a href="portafolioAd.html">CORTES</a> </h4><img src="../img/CORTE.jpg" alt="corte" class="tama1">
       </div>
       <div>
-        <h4><a href="portafolio.html">TINTES</a></h4><img src="img/TINTE.jpg" alt="tinte" class="tama2">
+        <h4><a href="portafolioAd.html">TINTES</a></h4><img src="../img/TINTE.jpg" alt="tinte" class="tama2">
       </div>
       <div>
-        <h4><a href="portafolio.html">BARBAS</a></h4><img src="img/barba.jpg" alt="barba" class="tama3">
+        <h4><a href="portafolioAd.html">BARBAS</a></h4><img src="../img/barba.jpg" alt="barba" class="tama3">
       </div>
     </div>
 
     <div class="c">
-      <h2 id="ag"><a href="horario.html">¡AGENDA TU CITA !</a></h2>
+      <h2 id="ag"><a href="horarioAd.html">¡AGENDA TU CITA !</a></h2>
     </div>
 
     <div class="flex-container3">
 
       <div>
         <h4>HORARIO</h4>
-        <a href="horario.html">
-          <img src="img/horario.jpg" alt="horario" class="im2">
+        <a href="horarioAd.html">
+          <img src="../img/horario.jpg" alt="horario" class="im2">
         </a>
 
       </div>
@@ -168,7 +215,7 @@
 
       <div>
         <h4>CANTIDAD</h4>
-        <a href="horario.html"><img src="img/cantidad.jpg" alt="cantidad" class="im"></a>
+        <a href="horarioAd.html"><img src="../img/cantidad.jpg" alt="cantidad" class="im"></a>
       </div>
 
     </div>
@@ -269,7 +316,7 @@
       <h5>UBICACION</h5>
       <a target="_blank"
         href="https://www.google.com.co/maps/place/Caicedo,+Medell%C3%ADn,+Antioquia/@6.2425134,-75.5592871,16z/data=!3m1!4b1!4m5!3m4!1s0x8e44285c24125bc7:0x6dde4ed383b2b37c!8m2!3d6.2422512!4d-75.5545989?authuser=0&hl=es-419"><img
-          src="img/maps.jpg" alt="maps" id="im4"></a>
+          src="../img/maps.jpg" alt="maps" id="im4"></a>
 
     </div>
 

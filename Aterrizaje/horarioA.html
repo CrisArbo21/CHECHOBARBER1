@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,19 +17,80 @@
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>CHECHO BARBERS</title>
+    <script>
+
+      function validarLogin() {
+            let usu = document.getElementById("usu").value;
+            let pas = document.getElementById("pas").value;
+      
+            if (usu == "admin") {
+              if (pas == "12345") {
+                localStorage.getItem("Admin");
+                alert("Binvenido Administrador ");
+                window.open("indexAdmin.html");
+              }
+            } else if (usu == "empleado") {
+      
+                if (pas == "12345"){
+                  localStorage.getItem("empleado");
+                  alert("Binvenido Empleado ");
+                  window.open("indexEmpleado.html");
+                }
+            }else if (usu == "usuario"){
+              if (pas == "12345") {
+                    localStorage.getItem("usuario");
+                    alert("Binvenido usuario ");
+                    window.open("index.html");
+                  }
+      
+            }else {
+              alert("error en usuario o password");
+            }
+      
+      
+          }
+
+          function index(){
+
+            let c = document.getElementById("cantidadPersonas").value;
+            let h = document.getElementById("horario").value;
+
+            if(c && h != null  ){
+
+              alert("Gracias por Preferir nuestro servicio");
+
+              window.open("indexU.html");
+
+            }else{
+
+              alert("Ningun campo puede estar vacio");
+            }
+            
+          }
+
+          function indexU(){
+            alert("Sesión Cerrada")
+            window.open("../index.html");
+
+          }
+         
+  
+          
+        </script>
 </head>
-<body id="index">
+
+<body>
     <div id="posicion">
         <header class="header"></header>
         <nav class="nav">
-        
+
           <div class="line">
             <ul>
               <li>
-                <button type="button" class="btn btn-secondary color1"><a href="index.html">Inicio</a></button>
-      
+                <button type="button" class="btn btn-secondary color1"><a href="../index.html">Inicio</a></button>
+    
               </li>
               <li>
                 <div class="dropdown show">
@@ -36,9 +98,9 @@
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Agenda tu cita
                   </a>
-      
+    
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item color" href="horario.html"> Horarios </a>
+                    <a class="dropdown-item color" href="horarioA.html"> Horarios </a>
                   </div>
                 </div>
               </li>
@@ -48,35 +110,11 @@
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Servicios
                   </a>
-      
+    
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item color" href="portafolio.html">Barbas</a>
-                    <a class="dropdown-item color" href="portafolio.html">Cortes de cabello</a>
-                    <a class="dropdown-item color" href="portafolio.html">Tintura</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="dropdown show">
-                  <a class="btn btn-secondary dropdown-toggle " href="#" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Empleados
-                  </a>
-      
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item color " href="listarUsuario.html"> Listar empleados</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="dropdown show">
-                  <a class="btn btn-secondary dropdown-toggle " href="#" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Clientes
-                  </a>
-      
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item color " href="listarClientes.html"> Listar clientes</a>
+                    <a class="dropdown-item color" href="portafolioA.html">Barbas</a>
+                    <a class="dropdown-item color" href="portafolioA.html">Cortes de cabello</a>
+                    <a class="dropdown-item color" href="portafolioA.html">Tintura</a>
                   </div>
                 </div>
               </li>
@@ -88,66 +126,36 @@
           <div class="line">
             <ul>
               <li>
-                <button type="button" class="btn btn-secondary color1" data-toggle="modal" data-target="#registroo">Registro</button>
+                <button type="button" class="btn btn-secondary color1" data-toggle="modal"
+                  data-target="#registroo">Registro</button>
               </li>
               <li>
-                <button type="button" class="btn btn-secondary color1" data-toggle="modal" data-target="#loginn">Iniciar sesión</button>
+                <button type="button" class="btn btn-secondary color1" data-toggle="modal" data-target="#loginn">Iniciar
+                  sesión</button>
     
               </li>
             </ul>
           </div>
         </nav>
-      </div>
-      
-    <div class="portafolioCortes">
-        <div id="bordeCorte">
-            <div id="cortes"> 
-                <img src="img/barba-delineada.jpg" alt="Barba delineada">
-                <div id="descripcion">
-                    <h4>Barba delineada</h4>
-                    <h5>$5.000</h5>
-                </div>
-            </div>
-        </div>
+      </div>  
 
-        <div id="bordeCorte">
-            <div id="cortes"> 
-                <img src="img/tinteBlanco.png" alt="Tinte blanco">
-                <div id="descripcion">
-                    <h4>Tinte blanco</h4>
-                    <h5>$15.000</h5>
-                </div>
-            </div>
-        </div>
+    <div id="fondoHorario">
+      <main id="main">
+          <div id="fecha">
+              <form action="" id="f">
+                  <label for="cantidadPersonas">Cantidad de personas</label>
+                  <br>
+                  <input type="text" id="cantidadPersonas" placeholder="--" required >
+                  <br><br>
+                  <label for="horario">Dia y hora</label>
+                  <br>
+                  <input type="datetime-local" id="horario" required ><br><br>
+                  <input type="submit" value="Agendar cita" onclick="alert('Porfavor ingrese el formulario de registro')">
+              </form>
+          </div>
+      </main>
     </div>
-
-
-    <div class="portafolioCortes1">
-        <div id="bordeCorte">
-            <div id="cortes"> 
-                <img src="img/tinteAzul.jpg" alt="Tinte azul">
-                <div id="descripcion">
-                    <h4>Tinte azul</h4>
-                    <h5>$15.000</h5>
-                </div>
-            </div>
-        </div>
-
-        <div id="bordeCorte">
-            <div id="cortes"> 
-                <img src="img/tinteArcoiris.jpg" alt="Tinte arcoiris">
-                <div id="descripcion">
-                    <h4>Tinte arcoiris</h4>
-                    <h5>$15.000</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="volver">
-        <button id="colorBoton" type="button" class="btn btn-secondary color1"><a href="portafolio.html">Volver</a></button>
-    </div>
-
+    
     <footer>
 
         <div>
@@ -161,6 +169,7 @@
             <p>Gmail (chechobarber@gmail.com)</p>
 
         </div>
+
         <div>
             <h5>UBICACION</h5>
             <a target="_blank"
@@ -183,24 +192,24 @@
             
             <h3>DATOS PERSONALES</h3>
             <br><br>
-            <label for="nombre">Nombre</label>
-            <input class="form-control" type="text" id="nombre">
+            <label for="nombre"  >Nombre</label>
+            <input class="form-control" type="text" id="nombre" required>
             <br>
   
-            <label for="direccion">Direccion</label>
-            <input class="form-control" type="text" id="direccion">
+            <label for="direccion" >Direccion</label>
+            <input class="form-control" type="text" id="direccion " required >
             <br>
   
-            <label for="documento">Documento</label>
-            <input class="form-control" type="text" id="documento">
+            <label for="documento"  >Documento</label>
+            <input class="form-control" type="text" id="documento" required>
             <br>
   
-            <label for="correo">Usuario</label>
-            <input class="form-control" type="text" id="correo">
+            <label for="correo"  >Usuario</label>
+            <input class="form-control" type="text" id="correo" required>
             <br>
   
-            <label for="contrasena">Contraseña</label>
-            <input class="form-control" type="text" id="contrasena" placeholder="*********">
+            <label for="contrasena" >Contraseña</label>
+            <input class="form-control" type="text" id="contrasena" placeholder="*********" required >
   
             <br>
             <button type="button" class="btn btn-outline-primary">Registrarse</button>
@@ -227,15 +236,15 @@
               
               <div class=" section">
                 <section id="for">
-                    <form method="get" id="form">
+                    <form action="" id="form" method="" onsubmit= "validarLogin();">
         
-                        <label for="fname">Usuario</label><br>
+                        <label for="usu">Usuario</label><br>
         
-                        <input type="text" id="fname" name="username"><br>
+                        <input type="text" id="usu" name="username"><br>
         
-                        <label for="lname">password</label><br>
+                        <label for="pas">password</label><br>
         
-                        <input type="text" id="lname" name="password" placeholder="*******"><br><br>
+                        <input type="text" id="pas" name="password" placeholder="*******"><br><br>
         
                         <button type="submit" name="enviar" class="btn btn-success">Iniciar sesion</button>
         
@@ -246,6 +255,8 @@
         </div>
       </div>
     </div>
+  
 
 </body>
+
 </html>

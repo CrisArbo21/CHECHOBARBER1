@@ -9,91 +9,149 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="
     https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 
     <title>CHECHO BARBERS</title>
+    <script>
+
+      function validarLogin() {
+            let usu = document.getElementById("usu").value;
+            let pas = document.getElementById("pas").value;
+      
+            if (usu == "admin") {
+              if (pas == "12345") {
+                localStorage.getItem("Admin");
+                alert("Binvenido Administrador ");
+                window.open("indexAdmin.html");
+              }
+            } else if (usu == "empleado") {
+      
+                if (pas == "12345"){
+                  localStorage.getItem("empleado");
+                  alert("Binvenido Empleado ");
+                  window.open("indexEmpleado.html");
+                }
+            }else if (usu == "usuario"){
+              if (pas == "12345") {
+                    localStorage.getItem("usuario");
+                    alert("Binvenido usuario ");
+                    window.open("index.html");
+                  }
+      
+            }else {
+              alert("error en usuario o password");
+            }
+      
+      
+          }
+
+          function index(){
+
+            let c = document.getElementById("cantidadPersonas").value;
+            let h = document.getElementById("horario").value;
+
+            if(c && h != null  ){
+
+              alert("Gracias por Preferir nuestro servicio");
+
+              window.open("indexU.html");
+
+            }else{
+
+              alert("Ningun campo puede estar vacio");
+            }
+            
+          }
+
+          function indexU(){
+            alert("Sesión Cerrada")
+            window.open("../index.html");
+
+          }
+         
+  
+          
+        </script>
 </head>
 <body id="index">
-    <div id="posicion">
-        <header class="header"></header>
-        <nav class="nav">
-        
-          <div class="line">
-            <ul>
-              <li>
-                <button type="button" class="btn btn-secondary color1"><a href="index.html">Inicio</a></button>
-      
-              </li>
-              <li>
-                <div class="dropdown show">
-                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Agenda tu cita
-                  </a>
-      
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item color" href="horario.html"> Horarios </a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="dropdown show">
-                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Servicios
-                  </a>
-      
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item color" href="portafolio.html">Barbas</a>
-                    <a class="dropdown-item color" href="portafolio.html">Cortes de cabello</a>
-                    <a class="dropdown-item color" href="portafolio.html">Tintura</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="dropdown show">
-                  <a class="btn btn-secondary dropdown-toggle " href="#" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Empleados
-                  </a>
-      
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item color " href="listarUsuario.html"> Listar empleados</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="dropdown show">
-                  <a class="btn btn-secondary dropdown-toggle " href="#" role="button" id="dropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Clientes
-                  </a>
-      
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item color " href="listarClientes.html"> Listar clientes</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <button type="button" class="btn btn-secondary color1"><a href="#contacto">Contacto</a></button>
-              </li>
-            </ul>
-          </div>
-          <div class="line">
-            <ul>
-              <li>
-                <button type="button" class="btn btn-secondary color1" data-toggle="modal" data-target="#registroo">Registro</button>
-              </li>
-              <li>
-                <button type="button" class="btn btn-secondary color1" data-toggle="modal" data-target="#loginn">Iniciar sesión</button>
-    
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div> 
+  <div id="posicion">
+    <header class="header"></header>
+    <nav class="nav">
+
+      <div class="line">
+        <ul>
+          <li>
+            <button type="button" class="btn btn-secondary color1"><a href="indexAdmin.html">Inicio</a></button>
+
+          </li>
+          <li>
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Agenda tu cita
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item color" href="horarioAd.html"> Horarios </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Servicios
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item color" href="portafolioAd.html">Barbas</a>
+                <a class="dropdown-item color" href="portafolioAd.html">Cortes de cabello</a>
+                <a class="dropdown-item color" href="portafolioAd.html">Tintura</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle " href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Clientes
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item color " href="listarClientesAd.html"> Listar clientes</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle " href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Empleados
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item color " href="listarEmpleados.html"> Listar empleados</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button type="button" class="btn btn-secondary color1"><a href="#contacto">Contacto</a></button>
+          </li>
+        </ul>
+      </div>
+      <div class="line">
+        <ul>
+          
+          <li>
+            <button type="button" class="btn btn-secondary color1" data-target="#loginn" onclick="indexU()">Cerrar sesión</button>
+
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
     <div id="table">
     <table class="table table-bordered" id="tablita">
@@ -239,7 +297,7 @@
         <h5>UBICACION</h5>
         <a target="_blank"
           href="https://www.google.com.co/maps/place/Caicedo,+Medell%C3%ADn,+Antioquia/@6.2425134,-75.5592871,16z/data=!3m1!4b1!4m5!3m4!1s0x8e44285c24125bc7:0x6dde4ed383b2b37c!8m2!3d6.2422512!4d-75.5545989?authuser=0&hl=es-419"><img
-            src="img/maps.jpg" alt="maps" id="im4"></a>
+            src="../img/maps.jpg" alt="maps" id="im4"></a>
   
       </div>
     </footer>
